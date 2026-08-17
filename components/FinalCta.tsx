@@ -8,7 +8,7 @@ export default function FinalCta() {
   const [bookingOpen, setBookingOpen] = useState(false);
 
   return (
-    <section className="overflow-hidden bg-white py-8 font-sans lg:py-10">
+    <section className="overflow-hidden bg-white py-8 font-sans lg:py-0">
       <div className="relative mx-auto w-full overflow-hidden bg-[#000d44] lg:grid lg:min-h-[430px] lg:grid-cols-[1.05fr_.95fr]">
         <span className="absolute -left-20 -top-24 h-72 w-72 rounded-full border border-white/10" />
         <span className="absolute left-[38%] top-10 h-40 w-40 rounded-full bg-[#1f5fff]/10 blur-2xl" />
@@ -47,12 +47,14 @@ export default function FinalCta() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#000d44]/35 via-transparent to-transparent" />
           </div>
 
-          <button type="button" onClick={() => setBookingOpen(true)} className="group relative mt-7 inline-flex rounded-[10px] bg-[#1f5fff] px-8 py-3.5 text-[14px] font-semibold text-white shadow-lg shadow-[#1f5fff]/20 transition-opacity hover:opacity-90">
-            <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true">
-              <rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{ width: "calc(100% - 14px)", height: "calc(100% - 14px)" }} />
-            </svg>
-            <span className="relative z-10">Start with a Consultation</span>
-          </button>
+          <div className="flex max-sm:justify-center">
+            <button type="button" onClick={() => setBookingOpen(true)} className="group relative mt-7 inline-flex rounded-[10px] bg-[#1f5fff] px-8 py-3.5 text-[14px] font-semibold text-white shadow-lg shadow-[#1f5fff]/20 transition-opacity hover:opacity-90">
+              <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true">
+                <rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{ width: "calc(100% - 14px)", height: "calc(100% - 14px)" }} />
+              </svg>
+              <span className="relative z-10">Start with a Consultation</span>
+            </button>
+          </div>
         </div>
       </div>
 

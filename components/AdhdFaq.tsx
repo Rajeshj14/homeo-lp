@@ -64,7 +64,7 @@ export default function AdhdFaq() {
   const [bookingOpen, setBookingOpen] = useState(false);
 
   return (
-    <section id="faq" className="bg-white px-4 py-0 font-sans sm:px-6 lg:py-10">
+    <section id="faq" className="bg-white px-4 py-0 font-sans sm:px-6 lg:pb-10">
       <div className="mx-auto max-w-[1400px]">
         <div className="mx-auto max-w-[850px] text-center">
           <p className="text-[13px] font-bold tracking-[1.1px] text-[#1f5fff] sm:text-[14px]">FREQUENTLY ASKED QUESTIONS</p>

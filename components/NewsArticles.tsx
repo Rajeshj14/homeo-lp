@@ -99,44 +99,42 @@ export default function NewsArticles() {
 
         {/* Mobile carousel */}
         <div className="mt-5 sm:hidden">
-          <div className="relative flex items-center gap-3">
+          <HighlightCard h={highlights[active]} />
+
+          <div className="mt-5 flex items-center justify-center gap-4">
             <button
               type="button"
               onClick={goPrev}
               aria-label="Previous"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1f5fff] text-white shadow-md active:scale-95"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1f5fff] text-white shadow-md transition-transform hover:scale-110 active:scale-95"
             >
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M15 18l-6-6 6-6" />
               </svg>
             </button>
 
-            <div className="min-w-0 flex-1">
-              <HighlightCard h={highlights[active]} />
+            <div className="flex gap-2">
+              {highlights.map((h, i) => (
+                <button
+                  key={h.title}
+                  type="button"
+                  onClick={() => setActive(i)}
+                  aria-label={`Go to ${i + 1}`}
+                  className={`h-2 rounded-full transition-all ${i === active ? "w-6 bg-[#1f5fff]" : "w-2 bg-[#1f5fff]/30"}`}
+                />
+              ))}
             </div>
 
             <button
               type="button"
               onClick={goNext}
               aria-label="Next"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1f5fff] text-white shadow-md active:scale-95"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1f5fff] text-white shadow-md transition-transform hover:scale-110 active:scale-95"
             >
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M9 18l6-6-6-6" />
               </svg>
             </button>
-          </div>
-
-          <div className="mt-5 flex justify-center gap-2">
-            {highlights.map((h, i) => (
-              <button
-                key={h.title}
-                type="button"
-                onClick={() => setActive(i)}
-                aria-label={`Go to ${i + 1}`}
-                className={`h-2 rounded-full transition-all ${i === active ? "w-6 bg-[#1f5fff]" : "w-2 bg-[#1f5fff]/30"}`}
-              />
-            ))}
           </div>
         </div>
 

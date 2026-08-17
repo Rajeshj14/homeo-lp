@@ -6,7 +6,7 @@ import BookingModal from "./BookingModal";
 
 function AutismiaLogo() {
   return <a href="#" className="flex items-center gap-2 text-white no-underline" aria-label="Autismia home">
-    <span><strong className="block text-[29px] leading-8 font-extrabold md:leading-5">B-Homeo Wellness</strong><small className="mt-1 block text-[14px] tracking-[.2px]">Acceptance • Understanding • Love</small></span>
+    <span><strong className="block text-[22px] leading-8 font-extrabold md:text-[29px] md:leading-5">B-Homeo Wellness</strong><small className="mt-1 block text-[14px] tracking-[.2px]">Acceptance • Understanding • Love</small></span>
   </a>;
 }
 
@@ -53,7 +53,7 @@ export default function AutismiaHero() {
 
     <header className="relative z-30 mx-auto flex h-[90px] max-w-[1380px] items-center justify-between px-6">
       <AutismiaLogo/>
-      <nav className="hidden items-center gap-9 text-[14px] font-semibold md:flex"><a className="text-[#1f5fff]" href="#">Home</a><a href="#about">About Adhd</a><a href="#programme">Programme</a><a href="#services">Services</a><a href="#faq">Support</a><a href="#contact">Contact</a></nav>
+      <nav className="hidden items-center gap-9 text-[14px] font-semibold md:flex"><a className="text-[#1f5fff]" href="#">Home</a><a href="#about">About ADHD</a><a href="#programme">Programme</a><a href="#services">Services</a><a href="#faq">Support</a><a href="#contact">Contact</a></nav>
       <button type="button" onClick={() => setBookingOpen(true)} className="group relative hidden rounded-xl bg-[#1f5fff] px-7 py-3.5 text-[14px] font-semibold shadow-lg shadow-black/10 md:block">
         <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true"><rect x="7" y="7" rx="8" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{width:"calc(100% - 14px)",height:"calc(100% - 14px)"}}/></svg>
         <span className="relative z-10">Contact Us</span>
@@ -63,7 +63,7 @@ export default function AutismiaHero() {
         aria-label={menuOpen ? "Close menu" : "Open menu"}
         aria-expanded={menuOpen}
         onClick={() => setMenuOpen((v) => !v)}
-        className="relative z-40 grid gap-1.5 md:hidden"
+        className="relative z-40 grid gap-1.5 transition-transform hover:scale-110 md:hidden"
       >
         <span className={`h-0.5 w-7 bg-white transition-transform duration-200 ${menuOpen ? "translate-y-2 rotate-45" : ""}`}/>
         <span className={`h-0.5 w-7 bg-white transition-opacity duration-200 ${menuOpen ? "opacity-0" : ""}`}/>
@@ -110,7 +110,7 @@ export default function AutismiaHero() {
             </div>
           </div>
         </div>
-        <button type="button" onClick={() => setBookingOpen(true)} className="order-6 group relative mt-6 inline-flex justify-self-start rounded-[10px] bg-[#1f5fff] px-7 py-3.5 text-[14px] font-semibold shadow-lg shadow-black/10 transition-opacity hover:opacity-90">
+        <button type="button" onClick={() => setBookingOpen(true)} className="order-6 group relative mt-6 inline-flex justify-self-center rounded-[10px] bg-[#1f5fff] px-7 py-3.5 text-[14px] font-semibold shadow-lg shadow-black/10 transition-opacity hover:opacity-90">
           <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true"><rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{width:"calc(100% - 14px)",height:"calc(100% - 14px)"}}/></svg>
           <span className="relative z-10">Book a Consultation</span>
         </button>

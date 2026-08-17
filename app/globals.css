@@ -56,12 +56,12 @@ body {
   to { stroke-dashoffset: -34; }
 }
 
-.group:hover .button-running-dash {
+.button-running-dash {
   animation: button-running-dash .8s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .group:hover .button-running-dash { animation: none; }
+  .button-running-dash { animation: none; }
 }
 
 @keyframes marquee-scroll {

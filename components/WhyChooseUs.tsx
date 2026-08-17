@@ -50,10 +50,12 @@ export default function WhyChooseUs() {
             ))}
           </ul>
 
-          <button type="button" onClick={() => setBookingOpen(true)} className="group relative mt-9 inline-flex rounded-[10px] bg-[#1f5fff] px-7 py-3.5 text-[14px] font-semibold text-white shadow-lg shadow-black/10 transition-opacity hover:opacity-90">
-            <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true"><rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{width:"calc(100% - 14px)",height:"calc(100% - 14px)"}}/></svg>
-            <span className="relative z-10">Discuss Your Child&rsquo;s Concerns</span>
-          </button>
+          <div className="flex max-sm:justify-center">
+            <button type="button" onClick={() => setBookingOpen(true)} className="group relative mt-9 inline-flex rounded-[10px] bg-[#1f5fff] px-7 py-3.5 text-[14px] font-semibold text-white shadow-lg shadow-black/10 transition-opacity hover:opacity-90">
+              <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true"><rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{width:"calc(100% - 14px)",height:"calc(100% - 14px)"}}/></svg>
+              <span className="relative z-10">Discuss Your Child&rsquo;s Concerns</span>
+            </button>
+          </div>
         </div>
       </div>
 

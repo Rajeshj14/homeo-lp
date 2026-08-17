@@ -22,8 +22,8 @@ export default function LearningDiscovery() {
   const [bookingOpen, setBookingOpen] = useState(false);
 
   return (
-    <section id="about" className="overflow-hidden bg-white px-4 py-8 font-sans text-black/70 sm:px-6 sm:py-10 lg:min-h-[800px] lg:py-[40px]">
-      <div className="mx-auto mb-8 max-w-[900px] text-center sm:mb-12">
+    <section id="about" className="overflow-hidden bg-white px-4 py-8 font-sans text-black/70 sm:px-6 sm:py-10 lg:min-h-[800px] lg:py-[10px]">
+      <div className="mx-auto mb-8 max-w-[900px] text-center sm:mb-8">
         <p className="text-[12px] font-bold tracking-[1px] text-[#1f5fff] sm:text-[14px]">
           ABOUT THE CLINIC
         </p>
@@ -33,7 +33,7 @@ export default function LearningDiscovery() {
       </div>
 
       <div className="mx-auto grid max-w-[1490px] items-center gap-10 sm:gap-14 lg:grid-cols-[1.08fr_.92fr] lg:gap-16">
-        <div className="relative mx-auto h-[355px] w-full max-w-[700px] sm:h-[500px] lg:h-[566px]">
+        <div className="relative mx-auto h-[355px] w-full max-w-[700px] sm:h-[500px] lg:h-[506px]">
           <div className="absolute left-0 top-0 h-[315px] w-[58%] overflow-hidden sm:h-[440px] lg:h-[505px] lg:w-[395px]">
             <FeatureImage
               side="left"
