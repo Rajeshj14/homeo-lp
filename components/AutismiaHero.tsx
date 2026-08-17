@@ -6,7 +6,7 @@ import BookingModal from "./BookingModal";
 
 function AutismiaLogo() {
   return <a href="#" className="flex items-center gap-2 text-white no-underline" aria-label="Autismia home">
-    <span><strong className="block text-[29px] leading-5 font-extrabold">B-Homeo Wellness</strong><small className="mt-1 block text-[14px] tracking-[.2px]">Acceptance • Understanding • Love</small></span>
+    <span><strong className="block text-[29px] leading-8 font-extrabold md:leading-5">B-Homeo Wellness</strong><small className="mt-1 block text-[14px] tracking-[.2px]">Acceptance • Understanding • Love</small></span>
   </a>;
 }
 
@@ -53,7 +53,7 @@ export default function AutismiaHero() {
 
     <header className="relative z-30 mx-auto flex h-[90px] max-w-[1380px] items-center justify-between px-6">
       <AutismiaLogo/>
-      <nav className="hidden items-center gap-9 text-[14px] font-semibold md:flex"><a className="text-[#1f5fff]" href="#">Home</a><a href="#about">About Autism</a><a href="#programme">Programme</a><a href="#services">Services</a><a href="#faq">Support</a><a href="#contact">Contact</a></nav>
+      <nav className="hidden items-center gap-9 text-[14px] font-semibold md:flex"><a className="text-[#1f5fff]" href="#">Home</a><a href="#about">About Adhd</a><a href="#programme">Programme</a><a href="#services">Services</a><a href="#faq">Support</a><a href="#contact">Contact</a></nav>
       <button type="button" onClick={() => setBookingOpen(true)} className="group relative hidden rounded-xl bg-[#1f5fff] px-7 py-3.5 text-[14px] font-semibold shadow-lg shadow-black/10 md:block">
         <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true"><rect x="7" y="7" rx="8" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{width:"calc(100% - 14px)",height:"calc(100% - 14px)"}}/></svg>
         <span className="relative z-10">Contact Us</span>

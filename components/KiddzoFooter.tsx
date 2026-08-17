@@ -20,7 +20,7 @@ export default function KiddzoFooter() {
   return <footer className="relative min-h-[756px] overflow-hidden bg-white font-sans text-black">
     <Image src="/footer-image.png" alt="Cheerful illustrated wellness landscape" fill sizes="100vw" className="object-cover object-bottom sm:hidden"/>
     <Image src="/kiddzo-footer-landscape.png" alt="Cheerful illustrated wellness landscape" fill sizes="100vw" className="hidden object-cover object-bottom sm:block"/>
-    <div className="relative z-10 mx-auto grid max-w-[1490px] gap-3 px-6 pb-20 pt-10 sm:grid-cols-2 sm:px-8 lg:grid-cols-[1.1fr_.8fr_.9fr_1.35fr] lg:gap-12 lg:pt-[76px]">
+    <div className="relative z-10 mx-auto grid max-w-[1490px] gap-3 px-6 pb-0 pt-10 sm:grid-cols-2 sm:px-8 lg:grid-cols-[1.1fr_.8fr_.9fr_1.35fr] lg:gap-12 lg:pt-[76px]">
       <section>
         <BHomeoLogo/>
         <p className="mt-5 max-w-[300px] text-[16px] leading-[1.8]">We are India&apos;s No. 1 online homeopathy wellness hub.</p>
@@ -33,7 +33,7 @@ export default function KiddzoFooter() {
       </nav>
 
       <section id="contact">
-        <h3 className="text-[22px] font-extrabold text-[#000d44]">Get In Touch</h3>
+        <h3 className="text-[22px] font-extrabold text-white">Get In Touch</h3>
         <div className="mt-5 max-sm:mt-2 space-y-4 max-sm:space-y-1 text-[15px] leading-6"><p><span className="block font-bold text-[#000d44]">Email</span><a className="hover:text-[#1f5fff]" href="mailto:admin@bhomeo.in">admin@bhomeo.in</a></p><p><span className="block font-bold text-[#000d44]">Phone</span><a className="hover:text-[#1f5fff]" href="tel:+917719996771">+91 7719996771</a></p></div>
       </section>
 
