@@ -87,12 +87,14 @@ export default function AdhdFaq() {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <a href="#contact" className="group relative inline-flex min-h-[54px] items-center justify-center rounded-[10px] bg-[#1f5fff] px-8 text-[14px] font-semibold text-white shadow-lg shadow-[#1f5fff]/20 transition-opacity hover:opacity-90">
+          <button type="button" onClick={() => setBookingOpen(true)} className="group relative inline-flex min-h-[54px] items-center justify-center rounded-[10px] bg-[#1f5fff] px-8 text-[14px] font-semibold text-white shadow-lg shadow-[#1f5fff]/20 transition-opacity hover:opacity-90">
             <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true"><rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{width:"calc(100% - 14px)",height:"calc(100% - 14px)"}}/></svg>
             <span className="relative z-10">Book Your Child’s Consultation</span>
-          </a>
+          </button>
         </div>
       </div>
+
+      <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
     </section>
   );
 }

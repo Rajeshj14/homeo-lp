@@ -84,7 +84,7 @@ export default function NewsArticles() {
 
   return (
     <section className="bg-white max-sm:py-6 py-10 font-sans">
-      <div className="mx-auto max-w-[1400px] px-6">
+      <div className="mx-auto max-w-[1400px] px-6 max-sm:px-4">
         <div className="mx-auto max-w-[700px] text-center">
           <p className="text-[14px] font-bold tracking-[1px] text-[#1f5fff]">ABOUT THE ADHD CARE PROGRAMME</p>
           <h2 className="mt-3 text-[26px] leading-tight font-extrabold text-[#000d44] sm:text-[30px]">What You Can Expect from B Homeo ADHD Care</h2>

@@ -75,7 +75,7 @@ export default function AutismiaHero() {
       <div className="absolute inset-x-0 top-[90px] z-30 border-t border-white/10 bg-[#000d44] px-6 py-6 md:hidden">
         <nav className="flex flex-col gap-5 text-[15px] font-semibold">
           <a onClick={() => setMenuOpen(false)} className="text-[#1f5fff]" href="#">Home</a>
-          <a onClick={() => setMenuOpen(false)} href="#about">About Autism</a>
+          <a onClick={() => setMenuOpen(false)} href="#about">About Adhd</a>
           <a onClick={() => setMenuOpen(false)} href="#programme">Programme</a>
           <a onClick={() => setMenuOpen(false)} href="#services">Services</a>
           <a onClick={() => setMenuOpen(false)} href="#faq">Support</a>

@@ -30,10 +30,7 @@ export default function WhyChooseUs() {
       <span className="absolute left-0 top-0 z-20 h-[6px] w-[58%] bg-[#1f5fff]" />
 
       <Image src="/home_2_banner.png" alt="Caregiver helping an elderly woman" fill sizes="100vw" quality={90} className="absolute inset-0 z-0 object-cover object-center" priority />
-      <div
-        className="absolute inset-0 z-[1] bg-[#000d44]/80"
-        style={{ clipPath: "polygon(0 0, 68% 0, 45% 100%, 0% 100%)" }}
-      />
+      <div className="absolute inset-0 z-[1] bg-[#000d44]/80 md:[clip-path:polygon(0_0,68%_0,45%_100%,0%_100%)]" />
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-6 py-16 md:px-14">
         <div className="max-w-[700px]">
