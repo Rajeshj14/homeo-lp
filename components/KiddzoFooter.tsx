@@ -44,7 +44,7 @@ export default function KiddzoFooter() {
         </div>
       </section>
     </div>
-    <div className="relative z-10 -bottom-65 mx-auto flex max-w-[1490px] flex-col items-center justify-between gap-2 px-10 pb-7 text-center sm:flex-row sm:px-18 sm:text-left">
+    <div className="relative z-10 mt-8 mx-auto flex max-w-[1490px] flex-col items-center justify-between gap-2 px-10 pb-7 text-center sm:mt-0 sm:-bottom-65 sm:flex-row sm:px-18 sm:text-left">
       <p className="text-[14px] sm:text-[16px]">
         © 2026 <span className="font-semibold text-[#1f5fff]">B-Homeo.</span> All rights reserved
       </p>
