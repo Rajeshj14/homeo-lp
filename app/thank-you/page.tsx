@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ThankYouPage() {
   return (
-    <div className="flex flex-col bg-[#000d44] font-sans text-white">
+    <div className="flex min-h-screen flex-col bg-[#000d44] font-sans text-white">
       <SiteNavbar />
 
       <main className="relative flex flex-1 items-center justify-center overflow-hidden px-6 py-8">

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import BookingModal from "./BookingModal";
+import Reveal from "./Reveal";
 
 function AutismiaLogo() {
   return <a href="#" className="flex items-center gap-2 text-white no-underline" aria-label="Autismia home">
@@ -73,7 +74,7 @@ export default function AutismiaHero() {
 
     {menuOpen && (
       <div className="absolute inset-x-0 top-[90px] z-30 border-t border-white/10 bg-[#000d44] px-6 py-6 md:hidden">
-        <nav className="flex flex-col gap-5 text-[15px] font-semibold">
+        <nav className="grid grid-cols-3 gap-x-4 gap-y-5 text-center text-[15px] font-semibold">
           <a onClick={() => setMenuOpen(false)} className="text-[#1f5fff]" href="#">Home</a>
           <a onClick={() => setMenuOpen(false)} href="#about">About Adhd</a>
           <a onClick={() => setMenuOpen(false)} href="#programme">Programme</a>
@@ -87,7 +88,7 @@ export default function AutismiaHero() {
             setMenuOpen(false);
             setBookingOpen(true);
           }}
-          className="group relative mt-6 flex items-center justify-center rounded-xl bg-[#1f5fff] px-7 py-3.5 text-[14px] font-semibold shadow-lg shadow-black/10"
+          className="group relative mx-auto mt-6 flex items-center justify-center rounded-xl bg-[#1f5fff] px-7 py-3.5 text-[14px] font-semibold shadow-lg shadow-black/10"
         >
           <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true"><rect x="7" y="7" rx="8" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{width:"calc(100% - 14px)",height:"calc(100% - 14px)"}}/></svg>
           <span className="relative z-10">Contact Us</span>
@@ -97,10 +98,10 @@ export default function AutismiaHero() {
 
     <div className="relative z-10 mx-auto grid max-w-[1380px] grid-cols-1 items-start gap-0 px-6 pb-16 pt-2 md:pt-20 lg:grid-cols-[1.05fr_.95fr] lg:gap-12 lg:pt-10">
       <div className="contents relative z-20 max-w-[660px] lg:block lg:pt-8">
-        <p className="order-1 mb-5 text-[14px] font-bold tracking-[.4px] text-[#1f5fff]"> FIRST CONSULTATION ₹499 ONLY</p>
-        <h1 className="order-2 text-[34px] leading-[1.24] font-medium tracking-[.1px] sm:text-[40px] lg:text-[42px]"><span className="block">Is Your Child Struggling with</span><span className="mt-1 block text-[#1f5fff]">Short Attention Span, Speech Delay,</span><span className="block text-white">Hyperactivity or Impulsive Behaviour?</span></h1>
-        <p className="order-3 mt-5 max-w-[620px] text-[16px] leading-7 font-medium text-white/90">Start with a Personalised ADHD Consultation for Your Child at <span className="font-bold text-[#1f5fff]">B Homeo Wellness</span></p>
-        <div className="order-5 relative mt-5 overflow-hidden rounded-2xl border border-[#1f5fff]/60 bg-[linear-gradient(105deg,rgba(31,95,255,.2),rgba(255,255,255,.06))] px-5 py-4 shadow-[0_12px_35px_rgba(0,0,0,.18)]">
+        <Reveal direction="down" className="order-1 mb-5 text-[14px] font-bold tracking-[.4px] text-[#1f5fff]"> FIRST CONSULTATION ₹499 ONLY</Reveal>
+        <Reveal direction="up" delay={100} className="order-2 text-[34px] leading-[1.24] font-medium tracking-[.1px] sm:text-[40px] lg:text-[42px]"><span className="block">Is Your Child Struggling with</span><span className="mt-1 block text-[#1f5fff]">Short Attention Span, Speech Delay,</span><span className="block text-white">Hyperactivity or Impulsive Behaviour?</span></Reveal>
+        <Reveal direction="up" delay={200} className="order-3 mt-5 max-w-[620px] text-[16px] leading-7 font-medium text-white/90">Start with a Personalised ADHD Consultation for Your Child at <span className="font-bold text-[#1f5fff]">B Homeo Wellness</span></Reveal>
+        <Reveal direction="left" delay={300} className="order-5 relative mt-5 overflow-hidden rounded-2xl border border-[#1f5fff]/60 bg-[linear-gradient(105deg,rgba(31,95,255,.2),rgba(255,255,255,.06))] px-5 py-4 shadow-[0_12px_35px_rgba(0,0,0,.18)]">
           <span className="absolute inset-y-0 left-0 w-1.5 bg-[#1f5fff]"/>
           <div className="flex items-start gap-3">
             <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#1f5fff] text-[16px] text-white shadow-md">✦</span>
@@ -109,32 +110,34 @@ export default function AutismiaHero() {
               <p>Complete Recovery May Be Possible Within <span className="text-[#1f5fff]">180 Days</span></p>
             </div>
           </div>
-        </div>
-        <button type="button" onClick={() => setBookingOpen(true)} className="order-6 group relative mt-6 inline-flex justify-self-center rounded-[10px] bg-[#1f5fff] px-7 py-3.5 text-[14px] font-semibold shadow-lg shadow-black/10 transition-opacity hover:opacity-90">
-          <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true"><rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{width:"calc(100% - 14px)",height:"calc(100% - 14px)"}}/></svg>
-          <span className="relative z-10">Book a Consultation</span>
-        </button>
+        </Reveal>
+        <Reveal direction="up" delay={400} className="order-6 mt-6 max-sm:mt-3 justify-start max-sm:justify-center">
+          <button type="button" onClick={() => setBookingOpen(true)} className="group relative inline-flex rounded-[10px] bg-[#1f5fff] px-7 py-3.5 text-[14px] font-semibold shadow-lg shadow-black/10 transition-opacity hover:opacity-90">
+            <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true"><rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{width:"calc(100% - 14px)",height:"calc(100% - 14px)"}}/></svg>
+            <span className="relative z-10">Book a Consultation</span>
+          </button>
+        </Reveal>
       </div>
 
-      <div className="hidden relative mx-auto mt-8 h-[560px] w-full max-w-[540px] lg:mt-0 lg:block"><div className="absolute -inset-20 rounded-[50%] border border-white/15"/><div className="absolute -inset-5 rounded-[45%] border border-white/10"/><Portrait index={0} className="left-2 top-5 h-[350px] w-[165px] rounded-[70px]"/><Portrait index={1} className="left-[195px] top-5 h-[165px] w-[165px] rounded-[60px]"/><Portrait index={2} className="left-[195px] top-[205px] h-[350px] w-[165px] rounded-[70px]"/><Portrait index={3} className="right-0 top-[100px] h-[345px] w-[165px] rounded-[70px]"/><Portrait index={4} className="left-2 top-[370px] h-[165px] w-[165px] rounded-[60px]"/><div className="absolute right-[-18px] top-6 text-[#1f5fff]">✦</div><div className="absolute right-[-50px] top-28 text-xl text-[#1f5fff]">•</div><div className="absolute right-[-55px] top-52 text-[#1f5fff]">★</div><div className="absolute right-[-45px] top-[300px] text-xl text-[#1f5fff]">•</div><div className="absolute right-[-55px] bottom-12 text-[#1f5fff]">×</div></div>
+      <Reveal direction="right" className="hidden relative mx-auto mt-8 h-[560px] w-full max-w-[540px] lg:mt-0 lg:block"><div className="absolute -inset-20 rounded-[50%] border border-white/15"/><div className="absolute -inset-5 rounded-[45%] border border-white/10"/><Portrait index={0} className="left-2 top-5 h-[350px] w-[165px] rounded-[70px]"/><Portrait index={1} className="left-[195px] top-5 h-[165px] w-[165px] rounded-[60px]"/><Portrait index={2} className="left-[195px] top-[205px] h-[350px] w-[165px] rounded-[70px]"/><Portrait index={3} className="right-0 top-[100px] h-[345px] w-[165px] rounded-[70px]"/><Portrait index={4} className="left-2 top-[370px] h-[165px] w-[165px] rounded-[60px]"/><div className="absolute right-[-18px] top-6 text-[#1f5fff]">✦</div><div className="absolute right-[-50px] top-28 text-xl text-[#1f5fff]">•</div><div className="absolute right-[-55px] top-52 text-[#1f5fff]">★</div><div className="absolute right-[-45px] top-[300px] text-xl text-[#1f5fff]">•</div><div className="absolute right-[-55px] bottom-12 text-[#1f5fff]">×</div></Reveal>
       <div className="order-4 grid grid-cols-2 gap-3 mt-8 lg:hidden">
         {portraits.map((item, i) => (
-          <div key={item.name} className={`relative overflow-hidden rounded-2xl border border-white/10 shadow-lg shadow-black/10 ${i === 4 ? "col-span-2 aspect-[21/9]" : "aspect-square"}`}>
+          <Reveal key={item.name} direction="up" delay={i * 80} className={`relative overflow-hidden rounded-2xl border border-white/10 shadow-lg shadow-black/10 ${i === 4 ? "col-span-2 aspect-[21/9]" : "aspect-square"}`}>
             <Image src="/autismia-children-strip.png" alt={item.name} width={2560} height={1024} quality={90} sizes="50vw" className={`absolute top-0 h-full w-[500%] max-w-none object-cover ${item.position}`}/>
-          </div>
+          </Reveal>
         ))}
       </div>
-      <div className="order-7 mt-8 -mx-6 overflow-hidden sm:hidden">
+      <Reveal direction="up" className="order-7 mt-8 -mx-6 overflow-hidden sm:hidden">
         <ul className="marquee-track flex w-max gap-3 px-6 text-[13px] leading-5 font-semibold text-white">
           {[...features, ...features].map((text, i) => <FeatureCard key={i} text={text}/>)}
         </ul>
-      </div>
+      </Reveal>
       <ul className="order-7 mt-8 hidden gap-3 text-[13px] leading-5 font-semibold text-white sm:grid sm:grid-cols-2 lg:col-span-2 lg:grid-cols-5 lg:mt-0">
-        <li className="group relative flex min-h-[88px] items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/10 px-4 py-3.5 shadow-lg shadow-black/10 backdrop-blur-md transition-transform hover:-translate-y-1"><span className="absolute inset-x-0 top-0 h-1 bg-[#1f5fff]"/><span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-[#1f5fff] text-[14px] font-extrabold text-white shadow-md">✓</span><span>Root Cause Analysis</span></li>
-        <li className="group relative flex min-h-[88px] items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/10 px-4 py-3.5 shadow-lg shadow-black/10 backdrop-blur-md transition-transform hover:-translate-y-1"><span className="absolute inset-x-0 top-0 h-1 bg-[#1f5fff]"/><span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-[#1f5fff] text-[14px] font-extrabold text-white shadow-md">✓</span><span>Holistic Assessment of Your Child’s Nature, Fears, Dreams &amp; Behaviour</span></li>
-        <li className="group relative flex min-h-[88px] items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/10 px-4 py-3.5 shadow-lg shadow-black/10 backdrop-blur-md transition-transform hover:-translate-y-1"><span className="absolute inset-x-0 top-0 h-1 bg-[#1f5fff]"/><span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-[#1f5fff] text-[14px] font-extrabold text-white shadow-md">✓</span><span>Mother’s Pregnancy History Considered</span></li>
-        <li className="group relative flex min-h-[88px] items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/10 px-4 py-3.5 shadow-lg shadow-black/10 backdrop-blur-md transition-transform hover:-translate-y-1"><span className="absolute inset-x-0 top-0 h-1 bg-[#1f5fff]"/><span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-[#1f5fff] text-[14px] font-extrabold text-white shadow-md">✓</span><span>Detailed Review of Previous Reports &amp; Investigations</span></li>
-        <li className="group relative flex min-h-[88px] items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/10 px-4 py-3.5 shadow-lg shadow-black/10 backdrop-blur-md transition-transform hover:-translate-y-1"><span className="absolute inset-x-0 top-0 h-1 bg-[#1f5fff]"/><span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-[#1f5fff] text-[14px] font-extrabold text-white shadow-md">✓</span><span>Follow-Up Every 15 Days</span></li>
+        <Reveal as="li" direction="up" delay={0} className="group relative flex min-h-[88px] items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/10 px-4 py-3.5 shadow-lg shadow-black/10 backdrop-blur-md transition-transform hover:-translate-y-1"><span className="absolute inset-x-0 top-0 h-1 bg-[#1f5fff]"/><span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-[#1f5fff] text-[14px] font-extrabold text-white shadow-md">✓</span><span>Root Cause Analysis</span></Reveal>
+        <Reveal as="li" direction="up" delay={80} className="group relative flex min-h-[88px] items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/10 px-4 py-3.5 shadow-lg shadow-black/10 backdrop-blur-md transition-transform hover:-translate-y-1"><span className="absolute inset-x-0 top-0 h-1 bg-[#1f5fff]"/><span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-[#1f5fff] text-[14px] font-extrabold text-white shadow-md">✓</span><span>Holistic Assessment of Your Child’s Nature, Fears, Dreams &amp; Behaviour</span></Reveal>
+        <Reveal as="li" direction="up" delay={160} className="group relative flex min-h-[88px] items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/10 px-4 py-3.5 shadow-lg shadow-black/10 backdrop-blur-md transition-transform hover:-translate-y-1"><span className="absolute inset-x-0 top-0 h-1 bg-[#1f5fff]"/><span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-[#1f5fff] text-[14px] font-extrabold text-white shadow-md">✓</span><span>Mother’s Pregnancy History Considered</span></Reveal>
+        <Reveal as="li" direction="up" delay={240} className="group relative flex min-h-[88px] items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/10 px-4 py-3.5 shadow-lg shadow-black/10 backdrop-blur-md transition-transform hover:-translate-y-1"><span className="absolute inset-x-0 top-0 h-1 bg-[#1f5fff]"/><span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-[#1f5fff] text-[14px] font-extrabold text-white shadow-md">✓</span><span>Detailed Review of Previous Reports &amp; Investigations</span></Reveal>
+        <Reveal as="li" direction="up" delay={320} className="group relative flex min-h-[88px] items-center gap-3 overflow-hidden rounded-2xl border border-white/10 bg-white/10 px-4 py-3.5 shadow-lg shadow-black/10 backdrop-blur-md transition-transform hover:-translate-y-1"><span className="absolute inset-x-0 top-0 h-1 bg-[#1f5fff]"/><span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-[#1f5fff] text-[14px] font-extrabold text-white shadow-md">✓</span><span>Follow-Up Every 15 Days</span></Reveal>
       </ul>
     </div>
 

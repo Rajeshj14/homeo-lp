@@ -3,14 +3,13 @@
 import Image from "next/image";
 import { useState } from "react";
 import BookingModal from "./BookingModal";
+import Reveal from "./Reveal";
 
 type Highlight = {
   title: string;
   text: string;
   alt: string;
   src: string;
-  /** Fraction-width sprite crop (e.g. "-left-full"); omit for a plai */
-  crop?: { position: string; widthClass: string };
 };
 
 const highlights: Highlight[] = [
@@ -18,46 +17,32 @@ const highlights: Highlight[] = [
     title: "3 to 6 Month AVG Course",
     text: "ADHD care may require consistent follow-up over time. The duration can vary depending on the child’s needs, symptoms and response to treatment.",
     alt: "Doctor discussing ADHD care duration with a parent and child",
-    src: "/adhd-faq-doctor-child.png",
+    src: "/about-images-3.png",
   },
   {
     title: "98% Success Rate",
     text: "B Homeo highlights a 98% success rate across its treatment approach, reflecting its experience in providing personalised homeopathic care.",
     alt: "Smiling student writing beside an open book",
-    src: "/learning-discovery-strip.png",
-    crop: { position: "-left-full", widthClass: "w-[200%]" },
+    src: "/about-images-4.jpg",
   },
   {
     title: "No Hidden Charges",
     text: "The first online consultation fee is fixed. Medicine charges, if applicable, are communicated by the doctor after consultation.",
     alt: "Children in a classroom",
-    src: "/home_2_banner.png",
+    src: "/about-images-2.avif",
   },
   {
     title: "Advanced Homeopathy Kit",
     text: "A structured homeopathic medicine approach designed to provide personalised support based on the child’s symptoms and overall assessment.",
     alt: "Prescribed homeopathic medicines delivered to a home",
-    src: "/treatment-process-strip.png",
-    crop: { position: "-left-[200%]", widthClass: "w-[300%]" },
+    src: "/about-images-3.avif",
   },
 ];
 
 function HighlightImage({ h }: { h: Highlight }) {
   return (
     <div className="relative h-[270px] w-full overflow-hidden rounded-[16px] bg-[#eef2ff]">
-      {h.crop ? (
-        <Image
-          src={h.src}
-          alt={h.alt}
-          width={2560}
-          height={1024}
-          sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 90vw"
-          quality={95}
-          className={`absolute top-0 h-full max-w-none object-cover ${h.crop.widthClass} ${h.crop.position}`}
-        />
-      ) : (
-        <Image src={h.src} alt={h.alt} fill sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 90vw" className="object-cover" />
-      )}
+      <Image src={h.src} alt={h.alt} fill sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 90vw" quality={100} className="object-cover" />
     </div>
   );
 }
@@ -85,15 +70,17 @@ export default function NewsArticles() {
   return (
     <section className="bg-white max-sm:py-6 py-10 font-sans">
       <div className="mx-auto max-w-[1400px] px-6 max-sm:px-4">
-        <div className="mx-auto max-w-[700px] text-center">
+        <Reveal direction="up" className="mx-auto max-w-[700px] text-center">
           <p className="text-[14px] font-bold tracking-[1px] text-[#1f5fff]">ABOUT THE ADHD CARE PROGRAMME</p>
           <h2 className="mt-3 text-[26px] leading-tight font-extrabold text-[#000d44] sm:text-[30px]">What You Can Expect from B Homeo ADHD Care</h2>
-        </div>
+        </Reveal>
 
         {/* Tablet / desktop grid */}
         <div className="mt-14 hidden gap-10 sm:grid sm:grid-cols-2 lg:grid-cols-4">
-          {highlights.map((h) => (
-            <HighlightCard key={h.title} h={h} />
+          {highlights.map((h, i) => (
+            <Reveal key={h.title} direction="up" delay={i * 100}>
+              <HighlightCard h={h} />
+            </Reveal>
           ))}
         </div>
 
@@ -138,7 +125,7 @@ export default function NewsArticles() {
           </div>
         </div>
 
-        <div className="mt-14 max-sm:mt-6 flex justify-center">
+        <Reveal direction="up" className="mt-14 max-sm:mt-6 flex justify-center">
           <button
             type="button"
             onClick={() => setBookingOpen(true)}
@@ -147,7 +134,7 @@ export default function NewsArticles() {
             <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true"><rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{width:"calc(100% - 14px)",height:"calc(100% - 14px)"}}/></svg>
             <span className="relative z-10">Book a Consultation</span>
           </button>
-        </div>
+        </Reveal>
       </div>
 
       <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />

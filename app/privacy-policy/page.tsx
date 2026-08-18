@@ -77,7 +77,7 @@ export default function PrivacyPolicyPage() {
         <div className="flex justify-center">
           <Link
             href="/"
-            className="group relative inline-flex items-center gap-2 rounded-xl bg-[#1f5fff] px-5 mt-8 text-[13px] font-semibold text-white shadow-lg shadow-black/10 transition-opacity hover:opacity-90 sm:px-7 sm:py-3.5 sm:text-[14px]"
+            className="group relative inline-flex items-center gap-2 rounded-xl bg-[#1f5fff] px-5 py-3 mt-8 text-[13px] font-semibold text-white shadow-lg shadow-black/10 transition-opacity hover:opacity-90 sm:px-7 sm:py-3.5 sm:text-[14px]"
           >
             <svg
               className="pointer-events-none absolute inset-0 h-full w-full overflow-visible"

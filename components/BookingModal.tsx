@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 export default function BookingModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (!open) return;
@@ -18,10 +19,35 @@ export default function BookingModal({ open, onClose }: { open: boolean; onClose
 
   if (!open) return null;
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    setError("");
     setSubmitting(true);
-    router.push("/thank-you");
+
+    try {
+      const res = await fetch("/api/submissions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source: "Homeo-Form-Leads",
+          name: form.get("name"),
+          phone: form.get("phone"),
+          email: form.get("email"),
+          pageUrl: window.location.href,
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+
+      router.push("/thank-you");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -64,6 +90,7 @@ export default function BookingModal({ open, onClose }: { open: boolean; onClose
             <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true"><rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{width:"calc(100% - 14px)",height:"calc(100% - 14px)"}}/></svg>
             <span className="relative z-10">{submitting ? "Submitting..." : "Submit"}</span>
           </button>
+          {error && <p className="text-[13px] font-medium text-red-600">{error}</p>}
         </form>
       </div>
     </div>

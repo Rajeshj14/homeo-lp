@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import BookingModal from "./BookingModal";
+import Reveal from "./Reveal";
 
 const services = [
   {
@@ -63,17 +64,19 @@ export default function PlantServices() {
 
   return (
     <section id="services" className="min-h-[835px] overflow-hidden bg-white font-sans">
-      <div className="flex h-[150px] flex-col items-center justify-center px-6 pb-3 text-center">
+      <Reveal direction="up" className="flex h-[150px] flex-col items-center justify-center px-6 pb-3 text-center">
         <p className="text-[14px] font-bold tracking-[1px] text-[#1f5fff]">HOW ONLINE TREATMENT WORKS</p>
         <h2 className="mt-2 text-[26px] leading-tight font-extrabold tracking-[.2px] text-[#000d44] sm:text-[30px]">A Simple 3-Step Treatment Process</h2>
         <span className="mt-3 h-[5px] w-[112px] bg-[#1f5fff]" />
-      </div>
+      </Reveal>
 
       <div className="min-h-[550px] bg-[linear-gradient(to_bottom,#1f5fff_0px,#1f5fff_363px,#fff_363px,#fff_100%)] max-sm:px-0 px-6 pt-[100px]">
         {/* Desktop / tablet grid — unchanged */}
         <div className="mx-auto hidden max-w-[1320px] gap-[58px] md:grid md:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard service={service} key={service.title} />
+          {services.map((service, i) => (
+            <Reveal key={service.title} direction={i === 0 ? "left" : i === services.length - 1 ? "right" : "up"} delay={i * 120}>
+              <ServiceCard service={service} />
+            </Reveal>
           ))}
         </div>
 

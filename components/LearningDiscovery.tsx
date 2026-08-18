@@ -3,16 +3,17 @@
 import Image from "next/image";
 import { useState } from "react";
 import BookingModal from "./BookingModal";
+import Reveal from "./Reveal";
 
 function FeatureImage({ side, alt }: { side: "left" | "right"; alt: string }) {
   return (
     <Image
       src="/learning-discovery-strip.png"
       alt={alt}
-      width={2560}
-      height={1024}
-      sizes="(max-width: 640px) 420px, (max-width: 1024px) 650px, 800px"
-      quality={95}
+      width={1774}
+      height={887}
+      sizes="(max-width: 640px) 700px, (max-width: 1024px) 820px, 800px"
+      quality={100}
       className={`absolute top-0 h-full w-[200%] max-w-none object-cover ${side === "left" ? "left-0" : "-left-full"}`}
     />
   );
@@ -23,17 +24,17 @@ export default function LearningDiscovery() {
 
   return (
     <section id="about" className="overflow-hidden bg-white px-4 py-8 font-sans text-black/70 sm:px-6 sm:py-10 lg:min-h-[800px] lg:py-[10px]">
-      <div className="mx-auto mb-8 max-w-[900px] text-center sm:mb-8">
+      <Reveal direction="up" className="mx-auto mb-8 max-w-[900px] text-center sm:mb-8">
         <p className="text-[12px] font-bold tracking-[1px] text-[#1f5fff] sm:text-[14px]">
           ABOUT THE CLINIC
         </p>
         <h2 className="mt-3 text-[24px] leading-[1.3] font-extrabold text-[#000d44] sm:mt-4 sm:text-[30px]">
           Why Choose B Homeo for Your Child’s Care?
         </h2>
-      </div>
+      </Reveal>
 
       <div className="mx-auto grid max-w-[1490px] items-center gap-10 sm:gap-14 lg:grid-cols-[1.08fr_.92fr] lg:gap-16">
-        <div className="relative mx-auto h-[355px] w-full max-w-[700px] sm:h-[500px] lg:h-[506px]">
+        <Reveal direction="left" className="relative mx-auto h-[355px] w-full max-w-[700px] sm:h-[500px] lg:h-[506px]">
           <div className="absolute left-0 top-0 h-[315px] w-[58%] overflow-hidden sm:h-[440px] lg:h-[505px] lg:w-[395px]">
             <FeatureImage
               side="left"
@@ -46,9 +47,9 @@ export default function LearningDiscovery() {
               alt="Smiling student writing beside an open book"
             />
           </div>
-        </div>
+        </Reveal>
 
-        <div className="mx-auto max-w-[630px] pb-1 sm:pb-3 lg:pl-1">
+        <Reveal direction="right" className="mx-auto max-w-[630px] pb-1 sm:pb-3 lg:pl-1">
           <div className="space-y-4 text-[14px] leading-[1.8] sm:space-y-5 sm:text-[16px] sm:leading-[1.85]">
             <p className="max-sm:mb-1">
               B Homeo Wellness follows a patient-centred and personalised
@@ -96,7 +97,7 @@ export default function LearningDiscovery() {
               <span className="relative z-10">Start with a Consultation</span>
             </button>
           </div>
-        </div>
+        </Reveal>
       </div>
 
       <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />

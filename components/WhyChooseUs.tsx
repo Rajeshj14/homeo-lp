@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import BookingModal from "./BookingModal";
+import Reveal from "./Reveal";
 
 const reasons = [
   {
@@ -34,28 +35,30 @@ export default function WhyChooseUs() {
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-6 py-16 md:px-14">
         <div className="max-w-[700px]">
-          <p className="text-[15px] font-bold text-[#1f5fff]">Types of ADHD</p>
-          <h2 className="mt-3 text-[26px] font-bold leading-tight text-white sm:text-[28px] lg:text-[30px]">Different Types of ADHD Parents Should Know About</h2>
-          <span className="mt-6 block h-[3px] w-10 bg-white/90" />
+          <Reveal direction="left">
+            <p className="text-[15px] font-bold text-[#1f5fff]">Types of ADHD</p>
+            <h2 className="mt-3 text-[26px] font-bold leading-tight text-white sm:text-[28px] lg:text-[30px]">Different Types of ADHD Parents Should Know About</h2>
+            <span className="mt-6 block h-[3px] w-10 bg-white/90" />
+          </Reveal>
 
           <ul className="mt-8 space-y-7">
-            {reasons.map((r) => (
-              <li key={r.number} className="flex gap-6">
+            {reasons.map((r, i) => (
+              <Reveal as="li" key={r.number} direction="left" delay={i * 120} className="flex gap-6">
                 <span className="font-serif text-[46px] italic font-bold leading-none text-white/90">{r.number}</span>
                 <div>
                   <p className="text-[18px] font-bold text-white">{r.title}</p>
                   <p className="mt-2 max-w-[420px] text-[15px] leading-7 text-white/90">{r.text}</p>
                 </div>
-              </li>
+              </Reveal>
             ))}
           </ul>
 
-          <div className="flex max-sm:justify-center">
+          <Reveal direction="up" delay={reasons.length * 120} className="flex max-sm:justify-center">
             <button type="button" onClick={() => setBookingOpen(true)} className="group relative mt-9 inline-flex rounded-[10px] bg-[#1f5fff] px-7 py-3.5 text-[14px] font-semibold text-white shadow-lg shadow-black/10 transition-opacity hover:opacity-90">
               <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true"><rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{width:"calc(100% - 14px)",height:"calc(100% - 14px)"}}/></svg>
               <span className="relative z-10">Discuss Your Child&rsquo;s Concerns</span>
             </button>
-          </div>
+          </Reveal>
         </div>
       </div>
 
