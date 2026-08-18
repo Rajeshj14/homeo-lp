@@ -52,6 +52,19 @@ body {
   .learning-image-float { animation: none; }
 }
 
+@keyframes breathe-ring {
+  0%, 100% { transform: scale(1); opacity: .55; }
+  50% { transform: scale(1.07); opacity: .15; }
+}
+
+.breathe-ring {
+  animation: breathe-ring 4.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .breathe-ring { animation: none; }
+}
+
 @keyframes button-running-dash {
   to { stroke-dashoffset: -34; }
 }
@@ -74,8 +87,21 @@ body {
   will-change: transform;
 }
 
+.marquee-track-slow {
+  animation: marquee-scroll 46s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover,
+.marquee-track-slow:hover {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track { animation: none; }
+  .marquee-track,
+  .marquee-track-slow {
+    animation: none;
+  }
 }
 
 .reveal {
