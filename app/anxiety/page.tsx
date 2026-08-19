@@ -12,12 +12,12 @@ export default function AnxietyPage() {
     <>
       <HeroSection />
       <WhyChooseUs />
-            <NewsArticles />
-            <PlantServices />
-            <LearningDiscovery />
-            <AdhdFaq />
-            <FinalCta />
-            <KiddzoFooter />
+      <NewsArticles />
+      <PlantServices />
+      <LearningDiscovery />
+      <AdhdFaq />
+      <FinalCta />
+      <KiddzoFooter />
     </>
   );
 }

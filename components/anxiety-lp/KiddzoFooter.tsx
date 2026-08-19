@@ -73,7 +73,7 @@ const socials = [
 
 export default function KiddzoFooter() {
   return (
-    <footer className="relative min-h-[625px] overflow-hidden bg-white font-sans text-black">
+    <footer className="relative min-h-[325px] overflow-hidden bg-white font-sans text-black">
       {/* Tablet & Desktop Background Image Only */}
       <Image
         src="/kiddzo-footer-landscape.png"
@@ -83,7 +83,7 @@ export default function KiddzoFooter() {
         className="hidden object-cover object-bottom sm:block"
       />
 
-      <div className="relative z-10 mx-auto grid max-w-[1490px] grid-cols-2 gap-x-3 gap-y-6 max-sm:gap-y-3 px-6 pb-0 pt-10 sm:gap-3 sm:px-8 lg:grid-cols-[1.1fr_.8fr_.9fr_1.35fr] lg:gap-12 lg:pt-[36px]">
+      <div className="relative z-10 mx-auto grid max-w-[1490px] grid-cols-2 gap-x-3 gap-y-6 max-sm:gap-y-3 px-6 pb-0 pt-10 sm:gap-3 sm:px-8 lg:grid-cols-[1.1fr_.8fr_.9fr_1.35fr] lg:gap-12 lg:pt-[36px] sm:[text-shadow:0_1px_3px_rgba(255,255,255,0.9),0_0_10px_rgba(255,255,255,0.75)]">
         <Reveal
           as="section"
           direction="left"
@@ -173,14 +173,14 @@ export default function KiddzoFooter() {
           </div>
         </Reveal>
       </div>
-      <div className="relative z-10 mt-8 mx-auto flex max-w-[1490px] flex-col items-center justify-between gap-2 px-10 pb-7 text-center sm:mt-0 sm:-bottom-65 sm:flex-row sm:px-18 sm:text-left">
+      <div className="relative z-10 mt-8 mx-auto flex max-w-[1490px] flex-col items-center justify-between gap-2 px-10 pb-7 text-center sm:mt-2 sm:flex-row sm:px-38 sm:text-left sm:[text-shadow:0_1px_3px_rgba(255,255,255,0.9),0_0_10px_rgba(255,255,255,0.75)]">
         <p className="text-[14px] sm:text-[16px]">
           © 2026 <span className="font-semibold text-[#1f5fff]">B-Homeo.</span>{" "}
           All rights reserved
         </p>
         <a
-          href="/privacy-policy"
-          className="text-[14px] font-medium text-[#1f5fff] hover:text-[#000d44] sm:text-[16px]"
+          href="/anxiety/privacy-policy"
+          className="text-[14px] font-medium text-[#000d44] hover:text-[#000d44] sm:text-[16px]"
         >
           Privacy Policy
         </a>

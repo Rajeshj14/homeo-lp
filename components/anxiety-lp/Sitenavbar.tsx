@@ -17,7 +17,7 @@ export default function SiteNavbar() {
       <BrandLogo />
 
       <Link
-        href="/"
+        href="/anxiety"
         className="group relative inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#1f5fff] px-3.5 py-3 text-[13px] font-semibold text-white shadow-lg shadow-black/10 transition-opacity hover:opacity-90 sm:px-7 sm:py-3.5 sm:text-[14px]"
       >
         <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true">

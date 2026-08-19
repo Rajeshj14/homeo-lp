@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import BookingModal from "@/components/BookingModal";
+import BookingModal from "./BookingModal";
+
 
 function Chevron() {
   return (

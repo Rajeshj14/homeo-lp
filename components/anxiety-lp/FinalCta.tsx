@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import BookingModal from "./BookingModal";
 import Reveal from "./Reveal";
+import BookingModal from "./BookingModal";
 
 export default function FinalCta() {
   const [bookingOpen, setBookingOpen] = useState(false);

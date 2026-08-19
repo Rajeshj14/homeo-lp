@@ -71,6 +71,11 @@ function getSheetWebhookUrl() {
   return (process.env.GOOGLE_APPS_SCRIPT_URL || '').trim();
 }
 
+function getSheetName(source: string) {
+  if (source === 'Anxiety-Form-Leads') return 'anxiety-leads';
+  return 'Form Leads';
+}
+
 async function pushToSheet(body: SubmissionBody, timestamp: string, telecrmStatus: string) {
   const url = getSheetWebhookUrl();
   if (!url) return null;
@@ -84,7 +89,7 @@ async function pushToSheet(body: SubmissionBody, timestamp: string, telecrmStatu
     body.pageUrl,
     telecrmStatus,
   ];
-  const sheetName = 'Form Leads';
+  const sheetName = getSheetName(body.source);
 
   const res = await fetch(url, {
     method: 'POST',

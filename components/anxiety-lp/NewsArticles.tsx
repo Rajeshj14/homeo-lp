@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
-import BookingModal from "./BookingModal";
 import Reveal from "./Reveal";
+import BookingModal from "./BookingModal";
 
 type Highlight = {
   title: string;
@@ -136,46 +136,44 @@ export default function NewsArticles() {
           </button>
         </Reveal>
 
-        {/* Mobile — one-card carousel with arrows + dots (unchanged) */}
-        <Reveal direction="up" className="mt-10 sm:hidden">
-          <div className="relative flex items-center gap-2">
+        {/* Mobile — card on top, arrows + dots together in one neat row below */}
+        <Reveal direction="up" className="mt-10 max-sm:mt-5 sm:hidden">
+          <HighlightCard h={highlights[active]} key={highlights[active].title} />
+
+          <div className="mt-6 flex items-center justify-center gap-4">
             <button
               type="button"
               onClick={goPrev}
               aria-label="Previous"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1f5fff] text-white shadow-md active:scale-95"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#1f5fff] text-white shadow-md active:scale-95"
             >
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M15 18l-6-6 6-6" />
               </svg>
             </button>
 
-            <div className="min-w-0 flex-1">
-              <HighlightCard h={highlights[active]} key={highlights[active].title} />
+            <div className="flex items-center gap-2">
+              {highlights.map((h, i) => (
+                <button
+                  key={h.title}
+                  type="button"
+                  onClick={() => setActive(i)}
+                  aria-label={`Go to ${h.title}`}
+                  className={`h-2 rounded-full transition-all ${i === active ? "w-6 bg-[#1f5fff]" : "w-2 bg-[#1f5fff]/25"}`}
+                />
+              ))}
             </div>
 
             <button
               type="button"
               onClick={goNext}
               aria-label="Next"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1f5fff] text-white shadow-md active:scale-95"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#1f5fff] text-white shadow-md active:scale-95"
             >
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M9 18l6-6-6-6" />
               </svg>
             </button>
-          </div>
-
-          <div className="mt-5 flex justify-center gap-2">
-            {highlights.map((h, i) => (
-              <button
-                key={h.title}
-                type="button"
-                onClick={() => setActive(i)}
-                aria-label={`Go to ${h.title}`}
-                className={`h-2 rounded-full transition-all ${i === active ? "w-6 bg-[#1f5fff]" : "w-2 bg-[#1f5fff]/25"}`}
-              />
-            ))}
           </div>
         </Reveal>
 

@@ -30,7 +30,7 @@ export default function BookingModal({ open, onClose }: { open: boolean; onClose
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          source: "Homeo-Form-Leads",
+          source: "Anxiety-Form-Leads",
           name: form.get("name"),
           phone: form.get("phone"),
           email: form.get("email"),
@@ -43,7 +43,7 @@ export default function BookingModal({ open, onClose }: { open: boolean; onClose
         throw new Error(data.error || "Something went wrong. Please try again.");
       }
 
-      router.push("/thank-you");
+      router.push("/anxiety/thank-you");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
       setSubmitting(false);
