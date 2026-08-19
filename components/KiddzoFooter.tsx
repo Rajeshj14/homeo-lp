@@ -173,14 +173,14 @@ export default function KiddzoFooter() {
           </div>
         </Reveal>
       </div>
-      <div className="relative z-10 mt-8 mx-auto flex max-w-[1490px] flex-col items-center justify-between gap-2 px-10 pb-7 text-center sm:mt-0 sm:-bottom-65 sm:flex-row sm:px-18 sm:text-left sm:[text-shadow:0_1px_3px_rgba(255,255,255,0.9),0_0_10px_rgba(255,255,255,0.75)]">
+      <div className="relative z-10 mt-8 mx-auto flex max-w-[1490px] flex-col items-center justify-between gap-2 px-10 pb-7 text-center sm:mt-2 sm:flex-row sm:px-38 sm:text-left sm:[text-shadow:0_1px_3px_rgba(255,255,255,0.9),0_0_10px_rgba(255,255,255,0.75)]">
         <p className="text-[14px] sm:text-[16px]">
           © 2026 <span className="font-semibold text-[#1f5fff]">B-Homeo.</span>{" "}
           All rights reserved
         </p>
         <a
           href="/privacy-policy"
-          className="text-[14px] font-medium text-[#1f5fff] hover:text-[#000d44] sm:text-[16px]"
+          className="text-[14px] font-medium text-[#000d44] hover:text-[#000d44] sm:text-[16px]"
         >
           Privacy Policy
         </a>
