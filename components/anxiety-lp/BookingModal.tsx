@@ -1,10 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 
 export default function BookingModal({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
@@ -43,7 +41,7 @@ export default function BookingModal({ open, onClose }: { open: boolean; onClose
         throw new Error(data.error || "Something went wrong. Please try again.");
       }
 
-      router.push("/anxiety/thank-you");
+      window.location.href = "/anxiety/thank-you";
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
       setSubmitting(false);
