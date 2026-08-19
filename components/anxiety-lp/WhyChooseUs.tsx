@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import BookingModal from "./BookingModal";
 
 const reasons = [
   {
@@ -58,6 +62,8 @@ function ReasonCard({ title, image, alt }: { title: string; image: string; alt: 
 }
 
 export default function WhyChooseUs() {
+  const [bookingOpen, setBookingOpen] = useState(false);
+
   return (
     <section className="overflow-hidden bg-[#f4f7ff] py-8 font-sans lg:py-10">
       <div className="mx-auto flex max-w-[1320px] flex-col items-center px-6 text-center">
@@ -77,8 +83,9 @@ export default function WhyChooseUs() {
       </div>
 
 <div className="mt-12 max-sm:mt-6 flex justify-center px-6">
-  <a
-    href="#contact"
+  <button
+    type="button"
+    onClick={() => setBookingOpen(true)}
     className="group relative inline-flex items-center justify-center rounded-[10px] bg-[#1f5fff] px-6 py-3.5 text-center text-[14px] font-semibold text-white shadow-lg shadow-[#1f5fff]/20 transition-opacity hover:opacity-90 sm:px-8"
   >
     <svg
@@ -109,8 +116,10 @@ export default function WhyChooseUs() {
         Start Your Care Journey
       </span>
     </span>
-  </a>
+  </button>
 </div>
+
+      <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
 
       <style>{`
         @keyframes why-marquee {
